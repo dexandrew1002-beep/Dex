@@ -197,3 +197,132 @@ button:hover,
     animation: none !important;
   }
 }
+/* ======================================
+   FLOATING 3D BACKGROUND OBJECTS
+   ====================================== */
+
+.floating-objects {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+  perspective: 1000px;
+}
+
+.floating-sphere,
+.floating-ring,
+.floating-diamond,
+.floating-cube {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.floating-sphere {
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 25%, #ffffff 0%, #c9a8ff 8%, #8052db 30%, #30205d 65%, #100c25 100%);
+  box-shadow:
+    inset -12px -14px 25px #080515aa,
+    inset 8px 8px 18px #ffffff70,
+    0 0 35px #9b6cff55;
+  animation: sphereFloat 9s ease-in-out infinite;
+}
+
+.sphere-one {
+  width: 105px;
+  height: 105px;
+  top: 17%;
+  left: 8%;
+}
+
+.sphere-two {
+  width: 55px;
+  height: 55px;
+  top: 68%;
+  left: 44%;
+  animation-delay: -3s;
+  background: radial-gradient(circle at 30% 25%, #fff, #73dfff 12%, #2878c9 45%, #101b45 100%);
+}
+
+.sphere-three {
+  width: 75px;
+  height: 75px;
+  top: 22%;
+  right: 7%;
+  animation-delay: -6s;
+  background: radial-gradient(circle at 30% 25%, #fff, #f3b7ff 10%, #a34bca 45%, #27113f 100%);
+}
+
+.floating-ring {
+  width: 125px;
+  height: 125px;
+  top: 52%;
+  right: 12%;
+  border: 9px solid #a98aff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #9b6cff88, inset 0 0 15px #9b6cff66;
+  transform: rotateX(65deg) rotateY(-20deg);
+  animation: ringFloat 12s ease-in-out infinite;
+}
+
+.floating-diamond {
+  width: 48px;
+  height: 48px;
+  top: 35%;
+  left: 28%;
+  background: linear-gradient(135deg, #ffffff, #a78bfa 35%, #433078 75%);
+  box-shadow: 0 0 25px #9b6cff66;
+  transform: rotate(45deg);
+  animation: diamondFloat 8s ease-in-out infinite;
+}
+
+.floating-cube {
+  width: 55px;
+  height: 55px;
+  bottom: 13%;
+  right: 32%;
+  border: 1px solid #83dfff;
+  background: linear-gradient(135deg, #6bcfff66, #263b8055);
+  box-shadow: 0 0 25px #48c8ff55, inset 0 0 20px #8de5ff44;
+  transform: rotate(25deg);
+  animation: cubeFloat 11s ease-in-out infinite;
+}
+
+@keyframes sphereFloat {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(15px, -25px, 30px); }
+}
+
+@keyframes ringFloat {
+  0%, 100% { translate: 0 0; rotate: 0deg; }
+  50% { translate: -18px -20px; rotate: 25deg; }
+}
+
+@keyframes diamondFloat {
+  0%, 100% { translate: 0 0; rotate: 45deg; }
+  50% { translate: 12px -22px; rotate: 135deg; }
+}
+
+@keyframes cubeFloat {
+  0%, 100% { translate: 0 0; rotate: 25deg; }
+  50% { translate: -15px -25px; rotate: 70deg; }
+}
+
+@media (max-width: 700px) {
+  .sphere-one { width: 65px; height: 65px; }
+  .sphere-two { width: 38px; height: 38px; }
+  .sphere-three { width: 48px; height: 48px; }
+  .floating-ring { width: 75px; height: 75px; }
+  .floating-diamond { width: 30px; height: 30px; }
+  .floating-cube { width: 38px; height: 38px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-sphere,
+  .floating-ring,
+  .floating-diamond,
+  .floating-cube {
+    animation: none !important;
+  }
+}
