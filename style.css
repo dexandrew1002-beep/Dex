@@ -367,78 +367,117 @@ button:hover,
    THE ANOMALY — FOUR COMPLETE COLOR THEMES
    ========================================= */
 
-/* 1. NEBULA — Purple / Violet / Electric Blue */
+/* NEBULA */
 [data-theme="nebula"] {
   color-scheme: dark;
   --bg: #10091f;
-  --background: #10091f;
-  --surface: #1b1230;
-  --panel: #1b1230;
-  --card: #21163a;
-  --text: #f5efff;
-  --muted: #b5a7ce;
-  --line: #49336b;
-  --accent: #ae83ff;
-  --accent2: #48c8ff;
-  --accent-glow: #9b6cff88;
-  --anomaly-glow: #9b6cff;
-  --anomaly-blue: #48c8ff;
+  --bg-2: #19112b;
+  --card: #211735;
+  --surface: #2b2042;
+  --hover: #3b2b58;
+  --blue: #7950d8;
+  --blue-hover: #9169ed;
+  --accent: #bd96ff;
+  --cyan: #65d8ff;
+  --text: #ffffff;
+  --text-2: #ded2f2;
+  --muted: #b7a5d2;
+  --inverse: #ffffff;
+  --border: #594477;
+  --shadow: rgba(0,0,0,.35);
+  --glow: rgba(155,108,255,.22);
+  --success: #63e6a0;
+  --warning: #ffd166;
+  --error: #ff758f;
+  --nav: rgba(16,9,31,.94);
+  --terminal: #0b0715;
+  --terminal-text: #d9c7ff;
+  --grid: rgba(189,150,255,.12);
 }
 
-/* 2. MIDNIGHT — Black / Cyan / Deep Blue */
+/* MIDNIGHT */
 [data-theme="midnight"] {
   color-scheme: dark;
   --bg: #050b18;
-  --background: #050b18;
-  --surface: #0c1729;
-  --panel: #0c1729;
+  --bg-2: #0b1526;
   --card: #12223a;
-  --text: #edf8ff;
-  --muted: #91a9c2;
-  --line: #23405d;
+  --surface: #1b304c;
+  --hover: #294361;
+  --blue: #2869d8;
+  --blue-hover: #4385f0;
   --accent: #39d9ff;
-  --accent2: #397cff;
-  --accent-glow: #39d9ff88;
-  --anomaly-glow: #397cff;
-  --anomaly-blue: #39d9ff;
+  --cyan: #80eaff;
+  --text: #ffffff;
+  --text-2: #d2e4f5;
+  --muted: #a7bdd4;
+  --inverse: #ffffff;
+  --border: #34516e;
+  --shadow: rgba(0,0,0,.4);
+  --glow: rgba(57,217,255,.18);
+  --success: #63e6a0;
+  --warning: #ffd166;
+  --error: #ff758f;
+  --nav: rgba(5,11,24,.94);
+  --terminal: #030813;
+  --terminal-text: #9beaff;
+  --grid: rgba(103,210,255,.1);
 }
 
-/* 3. MATRIX — Black / Emerald / Neon Green */
+/* MATRIX */
 [data-theme="matrix"] {
   color-scheme: dark;
   --bg: #030d08;
-  --background: #030d08;
-  --surface: #091b11;
-  --panel: #091b11;
+  --bg-2: #09170f;
   --card: #102719;
-  --text: #e5ffed;
-  --muted: #8bb89a;
-  --line: #1e5635;
-  --accent: #36ff83;
-  --accent2: #00d9a0;
-  --accent-glow: #36ff8388;
-  --anomaly-glow: #36ff83;
-  --anomaly-blue: #00d9a0;
+  --surface: #193b27;
+  --hover: #245438;
+  --blue: #087d49;
+  --blue-hover: #0b9c5a;
+  --accent: #5bff9b;
+  --cyan: #72ffd5;
+  --text: #f0fff4;
+  --text-2: #d0f0da;
+  --muted: #a5cdb2;
+  --inverse: #ffffff;
+  --border: #326344;
+  --shadow: rgba(0,0,0,.4);
+  --glow: rgba(54,255,131,.16);
+  --success: #72ff9b;
+  --warning: #ffe082;
+  --error: #ff8294;
+  --nav: rgba(3,13,8,.95);
+  --terminal: #020a05;
+  --terminal-text: #7dffad;
+  --grid: rgba(54,255,131,.1);
 }
 
-/* 4. ARCTIC — White / Silver / Ice Blue */
+/* ARCTIC — soft gray-blue, never pure white */
 [data-theme="arctic"] {
   color-scheme: light;
-  --bg: #f4f8fc;
-  --background: #f4f8fc;
-  --surface: #ffffff;
-  --panel: #ffffff;
-  --card: #eaf2fa;
-  --text: #14243a;
-  --muted: #63758b;
-  --line: #cbd9e8;
-  --accent: #367ee8;
-  --accent2: #55c9ed;
-  --accent-glow: #55aaff55;
-  --anomaly-glow: #367ee8;
-  --anomaly-blue: #55c9ed;
+  --bg: #e8edf4;
+  --bg-2: #dce5ef;
+  --card: #f1f4f8;
+  --surface: #d6e1ed;
+  --hover: #c7d7e8;
+  --blue: #2865bd;
+  --blue-hover: #1d4f9c;
+  --accent: #2468c5;
+  --cyan: #168bb5;
+  --text: #172235;
+  --text-2: #33465e;
+  --muted: #52657c;
+  --inverse: #ffffff;
+  --border: #bdcbdc;
+  --shadow: rgba(28,48,75,.12);
+  --glow: rgba(55,130,220,.14);
+  --success: #167443;
+  --warning: #925500;
+  --error: #bd2944;
+  --nav: rgba(232,237,244,.96);
+  --terminal: #dce5ef;
+  --terminal-text: #172235;
+  --grid: rgba(37,99,180,.1);
 }
-
 /* Theme-aware decorative elements */
 [data-theme="matrix"] .floating-sphere {
   filter: hue-rotate(95deg);
