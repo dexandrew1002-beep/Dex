@@ -363,3 +363,113 @@ button:hover,
     font-size: 9px;
   }
 }
+/* =========================================
+   THE ANOMALY — FOUR COMPLETE COLOR THEMES
+   ========================================= */
+
+/* 1. NEBULA — Purple / Violet / Electric Blue */
+[data-theme="nebula"] {
+  color-scheme: dark;
+  --bg: #10091f;
+  --background: #10091f;
+  --surface: #1b1230;
+  --panel: #1b1230;
+  --card: #21163a;
+  --text: #f5efff;
+  --muted: #b5a7ce;
+  --line: #49336b;
+  --accent: #ae83ff;
+  --accent2: #48c8ff;
+  --accent-glow: #9b6cff88;
+  --anomaly-glow: #9b6cff;
+  --anomaly-blue: #48c8ff;
+}
+
+/* 2. MIDNIGHT — Black / Cyan / Deep Blue */
+[data-theme="midnight"] {
+  color-scheme: dark;
+  --bg: #050b18;
+  --background: #050b18;
+  --surface: #0c1729;
+  --panel: #0c1729;
+  --card: #12223a;
+  --text: #edf8ff;
+  --muted: #91a9c2;
+  --line: #23405d;
+  --accent: #39d9ff;
+  --accent2: #397cff;
+  --accent-glow: #39d9ff88;
+  --anomaly-glow: #397cff;
+  --anomaly-blue: #39d9ff;
+}
+
+/* 3. MATRIX — Black / Emerald / Neon Green */
+[data-theme="matrix"] {
+  color-scheme: dark;
+  --bg: #030d08;
+  --background: #030d08;
+  --surface: #091b11;
+  --panel: #091b11;
+  --card: #102719;
+  --text: #e5ffed;
+  --muted: #8bb89a;
+  --line: #1e5635;
+  --accent: #36ff83;
+  --accent2: #00d9a0;
+  --accent-glow: #36ff8388;
+  --anomaly-glow: #36ff83;
+  --anomaly-blue: #00d9a0;
+}
+
+/* 4. ARCTIC — White / Silver / Ice Blue */
+[data-theme="arctic"] {
+  color-scheme: light;
+  --bg: #f4f8fc;
+  --background: #f4f8fc;
+  --surface: #ffffff;
+  --panel: #ffffff;
+  --card: #eaf2fa;
+  --text: #14243a;
+  --muted: #63758b;
+  --line: #cbd9e8;
+  --accent: #367ee8;
+  --accent2: #55c9ed;
+  --accent-glow: #55aaff55;
+  --anomaly-glow: #367ee8;
+  --anomaly-blue: #55c9ed;
+}
+
+/* Theme-aware decorative elements */
+[data-theme="matrix"] .floating-sphere {
+  filter: hue-rotate(95deg);
+}
+
+[data-theme="midnight"] .floating-sphere {
+  filter: hue-rotate(145deg);
+}
+
+[data-theme="arctic"] .floating-objects {
+  opacity: 0.55;
+}
+
+[data-theme="matrix"] .floating-ring {
+  border-color: #36ff83;
+  box-shadow: 0 0 20px #36ff8388;
+}
+
+[data-theme="midnight"] .floating-ring {
+  border-color: #39d9ff;
+  box-shadow: 0 0 20px #39d9ff88;
+}
+
+[data-theme="arctic"] .floating-ring {
+  border-color: #55aaff;
+  box-shadow: 0 0 20px #55aaff55;
+}
+
+/* Keep theme selector consistent */
+.theme-selector {
+  background-color: var(--surface);
+  color: var(--text);
+  border-color: var(--line);
+}
