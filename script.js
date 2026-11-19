@@ -10,15 +10,55 @@
   window.addEventListener("load", () => setTimeout(() => $("#loader")?.classList.add("done"), 450));
   setTimeout(() => $("#loader")?.classList.add("done"), 2200);
 
-  // Theme: explicit palette values are defined in style.css.
-  const themeToggle = $("#themeToggle");
-  function applyTheme(theme) {
-    root.dataset.theme = theme;
-    localStorage.setItem("dex-theme", theme);
-    const dark = theme === "dark";
-    $("#themeIcon").textContent = dark ? "☼" : "☾";
-    themeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
-    document.querySelector('meta[name="theme-color"]').content = dark ? "#080D1A" : "#F5F8FC";
+ // Theme: four selectable visual palettes
+const themeToggle = $("#themeToggle");
+const themeSelector = $("#themeSelector");
+
+function applyTheme(theme) {
+  const validThemes = ["nebula", "midnight", "matrix", "arctic"];
+
+  if (!validThemes.includes(theme)) {
+    theme = "nebula";
+  }
+
+  root.dataset.theme = theme;
+  localStorage.setItem("dex-theme", theme);
+
+  if (themeSelector) {
+    themeSelector.value = theme;
+  }
+
+  const isLight = theme === "arctic";
+
+  $("#themeIcon").textContent = isLight ? "☾" : "☼";
+
+  themeToggle.setAttribute(
+    "aria-label",
+    isLight ? "Switch to dark theme" : "Switch to Arctic theme"
+  );
+
+  document.querySelector('meta[name="theme-color"]').content =
+    theme === "arctic" ? "#F5F8FC" :
+    theme === "matrix" ? "#03130B" :
+    theme === "midnight" ? "#080D1A" :
+    "#10091F";
+}
+
+const savedTheme = localStorage.getItem("dex-theme");
+const initialTheme =
+  savedTheme === "dark" ? "midnight" :
+  savedTheme === "light" ? "arctic" :
+  savedTheme || root.dataset.theme || "nebula";
+
+applyTheme(initialTheme);
+
+themeSelector.addEventListener("change", () => {
+  applyTheme(themeSelector.value);
+});
+
+themeToggle.addEventListener("click", () => {
+  applyTheme(root.dataset.theme === "arctic" ? "nebula" : "arctic");
+});
   }
   applyTheme(root.dataset.theme || "dark");
   themeToggle.addEventListener("click", () => applyTheme(root.dataset.theme === "dark" ? "light" : "dark"));
