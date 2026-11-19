@@ -233,3 +233,17 @@ idea.toUpperCase()`;
     if(key==="t"){toggleChat(false);terminalInput.focus();$("#lab").scrollIntoView({behavior:reducedMotion?"auto":"smooth"});}
   });
 })();
+// BACKGROUND AUDIO
+const backgroundAudio = document.getElementById("backgroundAudio");
+
+if (backgroundAudio) {
+    backgroundAudio.volume = 0.3;
+
+    document.addEventListener("click", () => {
+        if (backgroundAudio.paused) {
+            backgroundAudio.play().catch(error => {
+                console.log("Audio playback blocked:", error);
+            });
+        }
+    }, { once: true });
+}
