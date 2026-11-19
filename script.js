@@ -59,9 +59,6 @@ themeSelector.addEventListener("change", () => {
 themeToggle.addEventListener("click", () => {
   applyTheme(root.dataset.theme === "arctic" ? "nebula" : "arctic");
 });
-  }
-  applyTheme(root.dataset.theme || "dark");
-  themeToggle.addEventListener("click", () => applyTheme(root.dataset.theme === "dark" ? "light" : "dark"));
 
   // Language switcher: interface labels only; personal statements remain in original English.
   let language = localStorage.getItem("dex-language") || "EN";
