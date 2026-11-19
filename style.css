@@ -326,3 +326,40 @@ button:hover,
     animation: none !important;
   }
 }
+/* FOUR-THEME SELECTOR */
+
+.theme-selector {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 9px 28px 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.theme-selector:hover,
+.theme-selector:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.theme-selector option {
+  background: #111426;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .theme-selector {
+    max-width: 88px;
+    padding: 8px 5px;
+    font-size: 9px;
+  }
+}
