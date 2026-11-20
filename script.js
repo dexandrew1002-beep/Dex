@@ -321,3 +321,5 @@ if (backgroundAudio) {
         }
     }, { once: true });
 }
+
+// section geometry interaction selector fix
