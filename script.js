@@ -259,41 +259,36 @@ idea.toUpperCase()`;
   $("#chatForm").addEventListener("submit",e=>{e.preventDefault();const q=$("#chatInput").value.trim();if(!q)return;sendChat(q);$("#chatInput").value="";setTimeout(()=>sendChat(botAnswer(q),false),220);});
   $$(".chat-suggestions button").forEach(b=>b.addEventListener("click",()=>{sendChat(b.dataset.question);setTimeout(()=>sendChat(botAnswer(b.dataset.question),false),180);}));
 
-  // Cursor repulsion: the actual 3D objects move away from the pointer.
-  const figureField = $("#home .floating-objects");
-  if (figureField && !reducedMotion && matchMedia("(pointer:fine)").matches) {
-    const figures = $$("#home .floating-objects > *").map(el => ({
+  // Cursor repulsion: each section's 3D object physically drifts away from the pointer.
+  if (!reducedMotion && matchMedia("(pointer:fine)").matches) {
+    const figures = $(".floating-objects > *, .section-geometry").map(el => ({
       el, x:0, y:0, vx:0, vy:0
     }));
-    let pointer = {x:-1000,y:-1000,active:false};
+    let pointer = {x:-2000,y:-2000,active:false};
     addEventListener("pointermove", e => {
-      const rect = $("#home").getBoundingClientRect();
-      pointer = {x:e.clientX-rect.left,y:e.clientY-rect.top,active:true};
+      pointer = {x:e.clientX,y:e.clientY,active:true};
     }, {passive:true});
-    $("#home").addEventListener("pointerleave", () => { pointer.active=false; });
+    addEventListener("pointerleave", () => { pointer.active=false; });
     function moveFigures() {
-      const fieldRect = figureField.getBoundingClientRect();
       for (const item of figures) {
         const r = item.el.getBoundingClientRect();
-        const cx = r.left-fieldRect.left+r.width/2;
-        const cy = r.top-fieldRect.top+r.height/2;
+        const cx = r.left+r.width/2;
+        const cy = r.top+r.height/2;
         let ax=0, ay=0;
         if (pointer.active) {
           const dx=cx-pointer.x, dy=cy-pointer.y;
           const distance=Math.hypot(dx,dy)||1;
-          const radius=185;
+          const radius=210;
           if(distance<radius) {
-            const force=(1-distance/radius)*2.4;
+            const force=(1-distance/radius)*2.8;
             ax=(dx/distance)*force;
             ay=(dy/distance)*force;
           }
         }
-        item.vx=(item.vx+ax)*.82;
-        item.vy=(item.vy+ay)*.82;
-        item.x+=item.vx;
-        item.y+=item.vy;
-        item.x*=.995;
-        item.y*=.995;
+        item.vx=(item.vx+ax)*.84;
+        item.vy=(item.vy+ay)*.84;
+        item.x=(item.x+item.vx)*.992;
+        item.y=(item.y+item.vy)*.992;
         item.el.style.translate=item.x.toFixed(1)+"px "+item.y.toFixed(1)+"px";
       }
       requestAnimationFrame(moveFigures);
