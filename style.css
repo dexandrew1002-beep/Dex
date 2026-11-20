@@ -562,7 +562,7 @@ button:hover,
 }
 
 
-/* Hero portrait replaces the 3D cube: static, flat 2D photograph. */
+/* Compact square hero portrait, matching the reference portfolio scale. */
 .hero-visual .prism-wrap,
 .hero-visual .cube-portrait-overlay { display: none !important; }
 .hero-visual .hero-profile-photo {
@@ -570,21 +570,21 @@ button:hover,
   z-index: 5;
   top: 50%;
   left: 50%;
-  width: clamp(230px, 25vw, 340px);
-  height: clamp(300px, 34vw, 390px);
+  width: clamp(190px, 22vw, 270px);
+  height: clamp(190px, 22vw, 270px);
   display: block;
   transform: translate(-50%, -50%);
   animation: none !important;
   object-fit: cover;
   object-position: center 30%;
   border: 1px solid var(--accent);
-  border-radius: 8px;
-  box-shadow: 0 20px 65px var(--shadow), 0 0 35px var(--glow);
+  border-radius: 12px;
+  box-shadow: 0 16px 48px var(--shadow), 0 0 28px var(--glow);
   pointer-events: none;
 }
 @media (max-width: 820px) {
-  .hero-visual .hero-profile-photo { width: 210px; height: 270px; }
+  .hero-visual .hero-profile-photo { width: 210px; height: 210px; }
 }
 @media (max-width: 560px) {
-  .hero-visual .hero-profile-photo { width: 180px; height: 230px; }
+  .hero-visual .hero-profile-photo { width: 180px; height: 180px; }
 }
