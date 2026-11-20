@@ -558,3 +558,25 @@ button:hover,
     height: 120px;
   }
 }
+
+
+/* Portrait overlay centered inside the 3D cube composition */
+.hero-visual .cube-portrait-overlay {
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  left: 50%;
+  width: 124px;
+  height: 124px;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  outline: 7px solid rgba(5, 12, 25, .72);
+  box-shadow: 0 0 0 1px var(--accent), 0 0 38px var(--glow);
+  pointer-events: none;
+}
+@media (max-width: 820px) {
+  .hero-visual .cube-portrait-overlay { width: 104px; height: 104px; }
+}
