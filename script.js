@@ -261,7 +261,7 @@ idea.toUpperCase()`;
 
   // Cursor repulsion: each section's 3D object physically drifts away from the pointer.
   if (!reducedMotion && matchMedia("(pointer:fine)").matches) {
-    const figures = $(".floating-objects > *, .section-geometry").map(el => ({
+    const figures = $$(".floating-objects > *, .section-geometry").map(el => ({
       el, x:0, y:0, vx:0, vy:0
     }));
     let pointer = {x:-2000,y:-2000,active:false};
